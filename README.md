@@ -29,10 +29,10 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
   - **Category-wise Filtering**: Browse products efficiently by categories.
   - **Sorting Filters**: Sort products by price (high to low, low to high) and top-rated.
   - **Banner Display**: Engaging visual banners for promotions or new arrivals.
+  - **Displaying Products**: Displaying products using fake store api.
   - **Hot Deals Section**: Discover exciting discounts and special offers on popular products.
   - **Trending Products**: Stay updated with the most sought-after and popular items.
-  - **Flash Sale Section**: Highlighting limited-time sales for quick purchases.
-     
+  - **Flash Sale Section**: Highlighting limited-time sales for quick purchases.  
     <img src=".github/images/home1.jpeg" width="300" alt="Home Screen 1">  
     <img src=".github/images/home2.jpeg" width="300" alt="Hot Deals">  
     <img src=".github/images/home3.jpeg" width="300" alt="Trending Products & Hot Deals Section">  
