@@ -40,7 +40,8 @@ Click the link below to watch a short demo of the Smart Shop app in action!
   - **Trending Products**: Stay updated with the most sought-after and popular items.
   - **Flash Sale Section**: Highlighting limited-time sales for quick purchases.  
     <img src=".github/images/home1.jpeg" width="300" alt="Home Screen 1">
-    <img src=".github/images/filter.jpeg" width="300" alt="Home Screen 1">
+    <img src=".github/images/category-filter.png" width="300" alt="Home Screen 1">
+    <img src=".github/images/sort-filter.png" width="300" alt="Home Screen 1">
     <img src=".github/images/home2.jpeg" width="300" alt="Hot Deals">  
     <img src=".github/images/home3.jpeg" width="300" alt="Trending Products & Hot Deals Section">  
     <img src=".github/images/home4.jpeg" width="300" alt="Flash Sale & Categories">
