@@ -6,7 +6,7 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 
 * **Splash Screen:** A welcoming first impression for the app.
 
-* **Login / Register:**
+* **User Authentication:**
     * **Login:** Secure login functionality with dummy data for testing.
     * **Register Form:** User registration with robust form validation to ensure data integrity.
 
@@ -14,11 +14,12 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
     * **Search Functionality:** Easily find products using a dedicated search bar.
     * **Category-wise Filtering:** Browse products efficiently by categories.
     * **Sorting Filters:** Sort products by price (high to low, low to high) and top-rated.
-    * **Banner Display:** Engaging visual banners.
+    * **Banner Display:** Engaging visual banners for promotions or new arrivals.
     * **Hot Deals Section:** Discover exciting discounts and special offers on popular products.
     * **Trending Products:** Stay updated with the most sought-after and popular items.
     * **Flash Sale Section:** Highlighting limited-time sales for quick purchases.
-* **Product Details:** View comprehensive product information, including prices, image, rating and descriptions.
+
+* **Product Details:** View comprehensive product information, including prices, image, rating, and descriptions.
 
 * **Shopping Cart:**
     * **Product Display:** Clearly displays added products with their quantities.
@@ -33,61 +34,61 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 
 * **Dark/Light Mode:** Toggle between dark and light themes for a personalized viewing experience.
 
-
 ## 📸 Screenshots
 
 Here are some screenshots to give you a glimpse of the SMART SHOP app:
 
 **Splash Screen:**
-![Splash Screen](.github/images/splash.jpeg)
+<img src=".github/images/splash.jpeg" width="300" alt="Splash Screen">
 
 **User Registration & Validation:**
-![Register Screen](.github/images/register.jpeg)
+<img src=".github/images/register.jpeg" width="300" alt="Register Screen">
 _User registration form._
 
-![Register with Validation Screen](.github/images/validation.jpeg)
+<img src=".github/images/validation.jpeg" width="300" alt="Register with Validation Screen">
 _Demonstrating form validation during registration._
 
 **User Login:**
-![Login Screen](.github/images/login.jpeg)
+<img src=".github/images/login.jpeg" width="300" alt="Login Screen">
 _Login screen for existing users._
 
 **Home Page - Overview:**
-![Home Screen 1](.github/images/home1.jpeg)
+<img src=".github/images/home1.jpeg" width="300" alt="Home Screen 1">
 _Featuring search bar, banners, and category buttons._
 
 **Home Page - Product Sections:**
-![Hot Deals](.github/images/home2.jpeg)
+<img src=".github/images/home2.jpeg" width="300" alt="Hot Deals">
 _Showcasing products, including those with discount badges._
 
-![Trending Products & Hot Deals Section](.github/images/home3.jpeg)
+**Trending Products & Hot Deals Section:**
+<img src=".github/images/home3.jpeg" width="300" alt="Trending Products & Hot Deals Section">
 _Highlighting popular, new arrivals, and hot deals._
 
-**Home Page - Flash Sale & Categories:**
-![Flash Sale & Categories](.github/images/home4.jpeg)
+**Flash Sale & Categories:**
+<img src=".github/images/home4.jpeg" width="300" alt="Flash Sale & Categories">
 _Showcasing flash sale items and easy category navigation._
 
 **Product Description Page:**
-![Product Description](.github/images/product-desc.jpeg)
+<img src=".github/images/product-desc.jpeg" width="300" alt="Product Description">
 _Detailed view of a selected product with full information._
 
 **Shopping Cart Page:**
-![Cart Page](.github/images/cartpage.jpeg)
+<img src=".github/images/cartpage.jpeg" width="300" alt="Cart Page">
 _Manage items in your shopping cart with quantity controls._
 
 **Favorites Page:**
-![Favourites Page](.github/images/favourites.jpeg)
+<img src=".github/images/favourites.jpeg" width="300" alt="Favourites Page">
 _Keep track of your cherished products._
 
 **Drawer Navigation:**
-![Drawer Navigation](.github/images/drawer.jpeg)
+<img src=".github/images/drawer.jpeg" width="300" alt="Drawer Navigation">
 _Access various sections of the app through the navigation drawer._
 
 **Profile Page:**
-![Profile Page](.github/images/profile.jpeg)
+<img src=".github/images/profile.jpeg" width="300" alt="Profile Page">
 _Manage user information and account preferences._
 
 **Dark/Light Mode Toggle:**
-![Dark/Light Mode](.github/images/dark-light.jpeg)
+<img src=".github/images/dark-light.jpeg" width="300" alt="Dark/Light Mode">
 _Showcasing the theme switching functionality._
 
