@@ -4,10 +4,8 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 
 ## 🎥 Project Demo
 
-<video width="500" controls>
-  <source src=".github/project-video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Watch the video](https://raw.githubusercontent.com/zafriii/Smart-Shop-Flutter/main/.github/images/project-video-thumbnail.jpg)](https://raw.githubusercontent.com/zafriii/Smart-Shop-Flutter/main/project-video.mp4)
+
 
 ## ✨ Features
 
