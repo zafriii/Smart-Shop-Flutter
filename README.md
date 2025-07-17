@@ -26,9 +26,9 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 
 - **Home Page**
   - **Search Functionality**: Easily find products using a dedicated search bar.
+  - **Banner Display**: Engaging visual banners for promotions or new arrivals.
   - **Category-wise Filtering**: Browse products efficiently by categories.
   - **Sorting Filters**: Sort products by price (high to low, low to high) and top-rated.
-  - **Banner Display**: Engaging visual banners for promotions or new arrivals.
   - **Displaying Products**: Displaying products using fake store api.
   - **Hot Deals Section**: Discover exciting discounts and special offers on popular products.
   - **Trending Products**: Stay updated with the most sought-after and popular items.
