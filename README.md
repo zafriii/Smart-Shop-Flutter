@@ -5,7 +5,7 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 ## 🎥 Project Demo
 
 <video width="500" controls>
-  <source src=".github/video/project-video.mp4" type="video/mp4">
+  <source src=".github/project-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
