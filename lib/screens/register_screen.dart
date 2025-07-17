@@ -10,16 +10,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String email = '';
   String password = '';
   String confirmPassword = '';
-  String username = ''; // Added for username field
+  String username = ''; 
 
-  // Controllers for real-time validation feedback
-  final TextEditingController _usernameController = TextEditingController(); // Controller for username
+  final TextEditingController _usernameController = TextEditingController(); 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
-  // Validation states
-  bool _isUsernameValid = false; // Validation state for username
+  bool _isUsernameValid = false;
   bool _isEmailValid = false;
   bool _isPasswordLengthValid = false;
   bool _isPasswordUppercaseValid = false;
@@ -27,14 +25,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isPasswordDigitValid = false;
   bool _isPasswordMatch = false;
 
-  // Password visibility states
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
 
   @override
   void initState() {
     super.initState();
-    _usernameController.addListener(_validateUsername); // Listen to username changes
+    _usernameController.addListener(_validateUsername); 
     _emailController.addListener(_validateEmail);
     _passwordController.addListener(_validatePassword);
     _confirmPasswordController.addListener(_validateConfirmPassword);
@@ -42,7 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void dispose() {
-    _usernameController.dispose(); // Dispose username controller
+    _usernameController.dispose(); 
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
@@ -52,7 +49,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void _validateUsername() {
     setState(() {
       username = _usernameController.text;
-      _isUsernameValid = username.length >= 3; // 3 characters validation
+      _isUsernameValid = username.length >= 3; 
     });
   }
 
@@ -65,7 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void _validatePassword() {
     setState(() {
       password = _passwordController.text;
-      _isPasswordLengthValid = password.length >= 6; // Changed to 6 characters
+      _isPasswordLengthValid = password.length >= 6; 
       _isPasswordUppercaseValid = password.contains(RegExp(r'[A-Z]'));
       _isPasswordLowercaseValid = password.contains(RegExp(r'[a-z]'));
       _isPasswordDigitValid = password.contains(RegExp(r'[0-9]'));
@@ -82,7 +79,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _register() {
     if (_formKey.currentState!.validate()) {
-      // In a real app, you would integrate with your AuthProvider here
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Account created! (Dummy only)')),
       );
@@ -119,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 30),
 
-              // Username Field
+  
               TextFormField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -140,13 +136,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 onChanged: (val) {
                   username = val;
-                  _validateUsername(); // Validate on type
+                  _validateUsername(); 
                 },
                 validator: (val) => val!.isEmpty ? 'Enter username' : (val.length < 3 ? 'Min 3 characters' : null),
               ),
               SizedBox(height: 16),
 
-              // Email Field
               TextFormField(
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
@@ -174,10 +169,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 16),
 
-              // Password Field
+         
               TextFormField(
                 controller: _passwordController,
-                obscureText: _obscurePassword, // Use state variable for visibility
+                obscureText: _obscurePassword, 
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock_outline),
                   hintText: 'Password',
@@ -194,7 +189,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     onPressed: () {
                       setState(() {
-                        _obscurePassword = !_obscurePassword; // Toggle visibility
+                        _obscurePassword = !_obscurePassword; 
                       });
                     },
                   ),
@@ -206,12 +201,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 validator: (val) => val!.length < 6 ? 'Min 6 chars' : null,
               ),
               SizedBox(height: 10),
-
-              // Password Validation Checklist
+              
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildValidationRow('Minimum 6 characters', _isPasswordLengthValid), // Updated text
+                  _buildValidationRow('Minimum 6 characters', _isPasswordLengthValid), 
                   _buildValidationRow('At least 1 uppercase', _isPasswordUppercaseValid),
                   _buildValidationRow('At least 1 lowercase', _isPasswordLowercaseValid),
                   _buildValidationRow('At least 1 number', _isPasswordDigitValid),
@@ -219,10 +213,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 16),
 
-              // Confirm Password Field
+           
               TextFormField(
                 controller: _confirmPasswordController,
-                obscureText: _obscureConfirmPassword, // Use state variable for visibility
+                obscureText: _obscureConfirmPassword, 
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock_outline),
                   hintText: 'Confirm Password',
@@ -239,7 +233,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     onPressed: () {
                       setState(() {
-                        _obscureConfirmPassword = !_obscureConfirmPassword; // Toggle visibility
+                        _obscureConfirmPassword = !_obscureConfirmPassword; 
                       });
                     },
                   ),
@@ -252,14 +246,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 20),
 
-              // Privacy Policy Checkbox and Text
+             
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Checkbox(
                     value: true,
                     onChanged: (bool? newValue) {
-                      // Handle checkbox state
                     },
                     activeColor: theme.primaryColor,
                   ),
@@ -303,7 +296,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 30),
 
-              // Sign Up Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -328,7 +320,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 20),
 
-              // "Already have an account?" Login link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -348,7 +339,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(
                         color: theme.primaryColor,
                         fontWeight: FontWeight.bold,
-                        // decoration: TextDecoration.underline,
+                    
                       ),
                     ),
                   ),
@@ -361,7 +352,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  // Helper widget to build validation rows
+ 
   Widget _buildValidationRow(String text, bool isValid) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
