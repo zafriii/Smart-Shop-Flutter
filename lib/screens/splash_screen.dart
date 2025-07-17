@@ -1,179 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../providers/auth_provider.dart';
-// import 'home_screen.dart';
-// import 'login_screen.dart';
-
-// class SplashScreen extends StatefulWidget {
-//   @override
-//   _SplashScreenState createState() => _SplashScreenState();
-// }
-
-// class _SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     _checkLogin();
-//   }
-
-//   void _checkLogin() async {
-//     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-//     await authProvider.checkLoginStatus();
-
-//     await Future.delayed(Duration(seconds: 2)); // show spinner briefly
-
-//     if (authProvider.isLoggedIn) {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (_) => HomeScreen()),
-//       );
-//     } else {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (_) => LoginScreen()),
-//       );
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(child: CircularProgressIndicator()),
-//     );
-//   }
-// }
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../providers/auth_provider.dart';
-// import 'home_screen.dart';
-// import 'login_screen.dart';
-
-// class SplashScreen extends StatefulWidget {
-//   @override
-//   _SplashScreenState createState() => _SplashScreenState();
-// }
-
-// class _SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     _checkLogin();
-//   }
-
-//   void _checkLogin() async {
-//     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-//     await authProvider.checkLoginStatus();
-
-//     await Future.delayed(Duration(seconds: 3)); // Show splash screen for a bit longer
-
-//     if (authProvider.isLoggedIn) {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (_) => HomeScreen()),
-//       );
-//     } else {
-//       Navigator.pushReplacement(
-//         context,
-//         MaterialPageRoute(builder: (_) => LoginScreen()),
-//       );
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // Get the current theme to adapt colors
-//     final theme = Theme.of(context);
-
-//     return Scaffold(
-//       body: Container(
-//         // Use a light purple gradient background
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [
-//               Colors.purple.shade200, // Start with a lighter purple
-//               Colors.purple.shade400, // End with a slightly darker purple
-//             ],
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomRight,
-//           ),
-//         ),
-//         child: Center(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             children: [
-//               // App Logo/Icon
-//               CircleAvatar(
-//                 radius: 60,
-//                 backgroundColor: Colors.white.withOpacity(0.9),
-//                 child: Icon(
-//                   Icons.shopping_bag_outlined, // A shopping bag icon
-//                   size: 70,
-//                   color: Colors.purple.shade700, // Icon color to match the purple theme
-//                 ),
-//               ),
-//               SizedBox(height: 24), // Spacing below the logo
-//               // App Name
-//               Text(
-//                 'Smart Shop',
-//                 style: TextStyle(
-//                   color: Colors.white,
-//                   fontSize: 32,
-//                   fontWeight: FontWeight.bold,
-//                   letterSpacing: 1.5,
-//                 ),
-//               ),
-//               SizedBox(height: 8), // Spacing below the app name
-//               // App Slogan/Tagline
-//               Text(
-//                 'Your Ultimate Shopping Destination',
-//                 style: TextStyle(
-//                   color: Colors.white.withOpacity(0.8),
-//                   fontSize: 16,
-//                   fontStyle: FontStyle.italic,
-//                 ),
-//               ),
-//               SizedBox(height: 48), // Spacing before the progress indicator
-//               // Loading Indicator
-//               CircularProgressIndicator(
-//                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white), // White spinner
-//               ),
-//               SizedBox(height: 16),
-//               Text(
-//                 'Loading...',
-//                 style: TextStyle(
-//                   color: Colors.white.withOpacity(0.8),
-//                   fontSize: 14,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
 
-// Custom widget for the waving three dots loader
 class ThreeDotsWaveLoader extends StatefulWidget {
   final Color dotColor;
   final double dotSize;
@@ -229,7 +59,6 @@ class _ThreeDotsWaveLoaderState extends State<ThreeDotsWaveLoader> with TickerPr
       CurvedAnimation(parent: _controller3, curve: Curves.easeInOut),
     );
 
-    // Add listeners to re-trigger animations with delays
     _controller1.addListener(() {
       if (_controller1.status == AnimationStatus.completed) {
         _controller1.reverse();
@@ -244,7 +73,7 @@ class _ThreeDotsWaveLoaderState extends State<ThreeDotsWaveLoader> with TickerPr
       if (_controller2.status == AnimationStatus.completed) {
         _controller2.reverse();
       } else if (_controller2.status == AnimationStatus.dismissed) {
-        Future.delayed(const Duration(milliseconds: 100), () { // Slight delay
+        Future.delayed(const Duration(milliseconds: 100), () { 
           _controller2.forward();
         });
       }
@@ -254,7 +83,7 @@ class _ThreeDotsWaveLoaderState extends State<ThreeDotsWaveLoader> with TickerPr
       if (_controller3.status == AnimationStatus.completed) {
         _controller3.reverse();
       } else if (_controller3.status == AnimationStatus.dismissed) {
-        Future.delayed(const Duration(milliseconds: 200), () { // More delay
+        Future.delayed(const Duration(milliseconds: 200), () { 
           _controller3.forward();
         });
       }
@@ -322,7 +151,7 @@ class _SplashScreenState extends State<SplashScreen> {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
     await authProvider.checkLoginStatus();
 
-    await Future.delayed(Duration(seconds: 3)); // Show splash screen for a bit longer
+    await Future.delayed(Duration(seconds: 3)); 
 
     if (authProvider.isLoggedIn) {
       Navigator.pushReplacement(
@@ -339,17 +168,16 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Get the current theme to adapt colors
+
     final theme = Theme.of(context);
 
     return Scaffold(
       body: Container(
-        // Use a light purple gradient background
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.purple.shade200, // Start with a lighter purple
-              Colors.purple.shade400, // End with a slightly darker purple
+              Colors.purple.shade200, 
+              Colors.purple.shade400, 
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -359,18 +187,16 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // App Logo/Icon
               CircleAvatar(
                 radius: 60,
                 backgroundColor: Colors.white.withOpacity(0.9),
                 child: Icon(
-                  Icons.shopping_bag_outlined, // A shopping bag icon
+                  Icons.shopping_bag_outlined, 
                   size: 70,
-                  color: Colors.purple.shade700, // Icon color to match the purple theme
+                  color: Colors.purple.shade700, 
                 ),
               ),
-              SizedBox(height: 24), // Spacing below the logo
-              // App Name
+              SizedBox(height: 24), 
               Text(
                 'Smart Shop',
                 style: TextStyle(
@@ -380,8 +206,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   letterSpacing: 1.5,
                 ),
               ),
-              SizedBox(height: 8), // Spacing below the app name
-              // App Slogan/Tagline
+              SizedBox(height: 8), 
               Text(
                 'Your Ultimate Shopping Destination',
                 style: TextStyle(
@@ -390,8 +215,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
-              SizedBox(height: 48), // Spacing before the progress indicator
-              // Loading Indicator - Replaced with custom loader
+              SizedBox(height: 48), 
               ThreeDotsWaveLoader(
                 dotColor: Colors.white,
                 dotSize: 10.0,
@@ -399,13 +223,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 animationDuration: Duration(milliseconds: 600),
               ),
               SizedBox(height: 16),
-              // Text(
-              //   'Loading...',
-              //   style: TextStyle(
-              //     color: Colors.white.withOpacity(0.8),
-              //     fontSize: 14,
-              //   ),
-              // ),
+           
             ],
           ),
         ),
