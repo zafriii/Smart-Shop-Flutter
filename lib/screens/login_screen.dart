@@ -1,170 +1,3 @@
-// // // lib/screens/login_screen.dart
-// // import 'package:flutter/material.dart';
-// // import 'package:shared_preferences/shared_preferences.dart';
-// // import 'home_screen.dart';
-// // import 'register_screen.dart';
-
-// // class LoginScreen extends StatefulWidget {
-// //   @override
-// //   _LoginScreenState createState() => _LoginScreenState();
-// // }
-
-// // class _LoginScreenState extends State<LoginScreen> {
-// //   final _formKey = GlobalKey<FormState>();
-// //   String email = '';
-// //   String password = '';
-
-// //   void _login() async {
-// //     if (_formKey.currentState!.validate()) {
-// //       // Dummy user
-// //       if (email == 'nihazafar050@gmail.com' && password == '123456') {
-// //         SharedPreferences prefs = await SharedPreferences.getInstance();
-// //         prefs.setBool('isLoggedIn', true);
-// //         Navigator.pushReplacement(
-// //             context, MaterialPageRoute(builder: (_) => HomeScreen()));
-// //       } else {
-// //         ScaffoldMessenger.of(context).showSnackBar(
-// //           SnackBar(content: Text('Invalid credentials')),
-// //         );
-// //       }
-// //     }
-// //   }
-
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       appBar: AppBar(title: Text('Login')),
-// //       body: Padding(
-// //         padding: EdgeInsets.all(16),
-// //         child: Form(
-// //           key: _formKey,
-// //           child: Column(
-// //             children: [
-// //               TextFormField(
-// //                 decoration: InputDecoration(labelText: 'Email'),
-// //                 onChanged: (val) => email = val,
-// //                 validator: (val) => val!.isEmpty ? 'Enter email' : null,
-// //               ),
-// //               TextFormField(
-// //                 obscureText: true,
-// //                 decoration: InputDecoration(labelText: 'Password'),
-// //                 onChanged: (val) => password = val,
-// //                 validator: (val) => val!.length < 6 ? 'Min 6 chars' : null,
-// //               ),
-// //               SizedBox(height: 20),
-// //               ElevatedButton(onPressed: _login, child: Text('Login')),
-// //               TextButton(
-// //                   onPressed: () {
-// //                     Navigator.push(
-// //                         context,
-// //                         MaterialPageRoute(
-// //                             builder: (_) => RegisterScreen()));
-// //                   },
-// //                   child: Text('Don\'t have an account? Register')),
-// //             ],
-// //           ),
-// //         ),
-// //       ),
-// //     );
-// //   }
-// // }
-
-
-
-
-
-
-
-
-
-
-// // lib/screens/login_screen.dart
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../providers/auth_provider.dart';
-// import 'home_screen.dart';
-// import 'register_screen.dart';
-
-// class LoginScreen extends StatefulWidget {
-//   @override
-//   _LoginScreenState createState() => _LoginScreenState();
-// }
-
-// class _LoginScreenState extends State<LoginScreen> {
-//   final _formKey = GlobalKey<FormState>();
-//   String email = '';
-//   String password = '';
-
-//   void _login() async {
-//     if (_formKey.currentState!.validate()) {
-//       // Dummy user check
-//       if (email == 'nihazafar050@gmail.com' && password == '123456') {
-//         final authProvider = Provider.of<AuthProvider>(context, listen: false);
-//         await authProvider.login(email, password);
-//         Navigator.pushReplacement(
-//           context,
-//           MaterialPageRoute(builder: (_) => HomeScreen()),
-//         );
-//       } else {
-//         ScaffoldMessenger.of(context).showSnackBar(
-//           SnackBar(content: Text('Invalid credentials')),
-//         );
-//       }
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Login')),
-//       body: Padding(
-//         padding: EdgeInsets.all(16),
-//         child: Form(
-//           key: _formKey,
-//           child: Column(
-//             children: [
-//               TextFormField(
-//                 decoration: InputDecoration(labelText: 'Email'),
-//                 onChanged: (val) => email = val,
-//                 validator: (val) => val!.isEmpty ? 'Enter email' : null,
-//               ),
-//               TextFormField(
-//                 obscureText: true,
-//                 decoration: InputDecoration(labelText: 'Password'),
-//                 onChanged: (val) => password = val,
-//                 validator: (val) => val!.length < 6 ? 'Min 6 chars' : null,
-//               ),
-//               SizedBox(height: 20),
-//               ElevatedButton(onPressed: _login, child: Text('Login')),
-//               TextButton(
-//                 onPressed: () {
-//                   Navigator.push(
-//                     context,
-//                     MaterialPageRoute(builder: (_) => RegisterScreen()),
-//                   );
-//                 },
-//                 child: Text('Don\'t have an account? Register'),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
@@ -180,9 +13,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   String email = '';
   String password = '';
-  bool _obscurePassword = true; // State for password visibility
+  bool _obscurePassword = true; 
 
-  // Controllers for input fields
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -195,7 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _login() async {
     if (_formKey.currentState!.validate()) {
-      // Dummy user check
       if (email == 'nihazafar050@gmail.com' && password == '123456') {
         final authProvider = Provider.of<AuthProvider>(context, listen: false);
         await authProvider.login(email, password);
@@ -220,10 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text('Login', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.transparent, // Transparent app bar
-        foregroundColor: theme.textTheme.headlineSmall?.color, // Icon/text color from theme
+        backgroundColor: Colors.transparent, 
+        foregroundColor: theme.textTheme.headlineSmall?.color, 
       ),
-      body: SingleChildScrollView( // Added SingleChildScrollView for scrollability
+      body: SingleChildScrollView( 
         padding: EdgeInsets.all(16),
         child: Form(
           key: _formKey,
@@ -240,7 +71,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 30),
 
-              // Email Field
               TextFormField(
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
@@ -260,10 +90,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 16),
 
-              // Password Field
               TextFormField(
                 controller: _passwordController,
-                obscureText: _obscurePassword, // Use state variable for visibility
+                obscureText: _obscurePassword, 
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock_outline),
                   hintText: 'Password',
@@ -280,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     onPressed: () {
                       setState(() {
-                        _obscurePassword = !_obscurePassword; // Toggle visibility
+                        _obscurePassword = !_obscurePassword; 
                       });
                     },
                   ),
@@ -290,19 +119,18 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20),
 
-              // Login Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _login,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple.shade700, // User requested color
-                    foregroundColor: Colors.white, // Text color
+                    backgroundColor: Colors.purple.shade700, 
+                    foregroundColor: Colors.white, 
                     padding: EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12), // Rounded corners
+                      borderRadius: BorderRadius.circular(12), 
                     ),
-                    elevation: 0, // No shadow for flat look
+                    elevation: 0, 
                   ),
                   child: Text(
                     'Login',
@@ -315,7 +143,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20),
 
-              // "Don't have an account? Register" link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -336,9 +163,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       'Register',
                       style: TextStyle(
-                        color: theme.primaryColor, // Different color for register link
+                        color: theme.primaryColor, 
                         fontWeight: FontWeight.bold,
-                        // No underline as requested
+                    
                       ),
                     ),
                   ),
