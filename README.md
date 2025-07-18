@@ -5,9 +5,7 @@ A modern and intuitive Flutter e-commerce application designed to provide a seam
 ## 🎥 Project Demo
 
 Click the link below to watch a short demo of the Smart Shop app in action!
-
 [▶ Watch the video](https://drive.google.com/file/d/14dM1MupA_gAOopebDEnxbG4FkXeUJZ2B)
-
 
 ## ✨ Features
 
