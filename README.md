@@ -8,8 +8,6 @@ Click the link below to watch a short demo of the Smart Shop app in action!
 
 [▶ Watch the video](https://drive.google.com/file/d/1mXkrhrU-s6kCDJ-GCeqCVR3Jn5u_UUMF/view?usp=sharing)
 
-
-
 ## ✨ Features
 
 - **Splash Screen**  
@@ -27,8 +25,7 @@ Click the link below to watch a short demo of the Smart Shop app in action!
     <img src=".github/images/Register.jpeg" width="300" alt="Register Screen">
 
   - **Form Validation**: Demonstrates validation during registration.
-    
-    <img src=".github/images/Validation.jpeg" width="300" alt="Register with Validation Screen">
+     <img src=".github/images/Validation.jpeg" width="300" alt="Register with Validation Screen">
 
 - **Home Page**
   - **Search Functionality**: Easily find products using a dedicated search bar.
