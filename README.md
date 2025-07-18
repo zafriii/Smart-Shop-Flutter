@@ -25,6 +25,7 @@ Click the link below to watch a short demo of the Smart Shop app in action!
     <img src=".github/images/Register.jpeg" width="300" alt="Register Screen">
 
   - **Form Validation**: Demonstrates validation during registration.
+    
      <img src=".github/images/Validation.jpeg" width="300" alt="Register with Validation Screen">
 
 - **Home Page**
@@ -39,6 +40,7 @@ Click the link below to watch a short demo of the Smart Shop app in action!
     <img src=".github/images/home1.jpeg" width="300" alt="Home Screen 1">
     <img src=".github/images/category-filter.png" width="300" alt="Home Screen 1">
     <img src=".github/images/sort-filter.png" width="300" alt="Home Screen 1">
+    
     <img src=".github/images/home2.jpeg" width="300" alt="Hot Deals">  
     <img src=".github/images/home3.jpeg" width="300" alt="Trending Products & Hot Deals Section">  
     <img src=".github/images/home4.jpeg" width="300" alt="Flash Sale & Categories">
